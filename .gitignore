@@ -10,6 +10,7 @@
 /soli-undo/[Bb]uilds/
 /soli-undo/[Ll]ogs/
 /soli-undo/[Uu]ser[Ss]ettings/
+/soli-undo/.[Ii]dea/
 *.log
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
