@@ -43,10 +43,16 @@ namespace SoliUndo
         }
 
         private void InitializeNewSetOfCards()
-        { 
-            _allCards.Clear();
+        {
+            DestroyCards();
+            
             _allCards = _cardsInitializer.CreateCards(cardPrefab, config.CardsData);
             _cardsStacksDistributor.DealCards(_allCards, cardStacks);
+
+            foreach (var card in _allCards)
+            {
+                card.OnMoveCard += MoveCard;
+            }
         }
         
         private void SetupUI()
@@ -55,6 +61,23 @@ namespace SoliUndo
             {
                 undoButton.onClick.AddListener(UndoLastMove);
             }
+        }
+        
+        private void MoveCard(Card card, CardStack fromStack, CardStack toStack)
+        {
+            if (card == null || fromStack == null || toStack == null)
+            {
+                Debug.LogError("Invalid move parameters");
+                return;
+            }
+            
+            if (!toStack.CanPlaceCard(card))
+            {
+                Debug.Log("Invalid move: card cannot be placed on target stack");
+                return;
+            }
+            
+           // undo manager
         }
 
         private void UndoLastMove()
@@ -79,6 +102,7 @@ namespace SoliUndo
                 var card = _allCards[i];
                 if (card != null)
                 {
+                    card.OnMoveCard -= MoveCard;
                     Destroy(card.gameObject);
                 }
             }

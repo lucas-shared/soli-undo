@@ -230,6 +230,9 @@ MonoBehaviour:
   cardRenderer: {fileID: 1176354701451861468}
   backRenderer: {fileID: 7711691316529157457}
   cardCollider: {fileID: 8515631460835359003}
+  cardStackLayerMask:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!61 &8515631460835359003
 BoxCollider2D:
   m_ObjectHideFlags: 0
