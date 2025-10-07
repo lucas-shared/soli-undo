@@ -11,7 +11,7 @@ namespace SoliUndo.CardsStack
         [SerializeField] private float cardSpacing = -0.2f;
         [SerializeField] private float zOffset = -0.01f;
         
-        
+        public CardStackType StackType => stackType;
         private readonly List<Card> _cards = new();
         
 
@@ -29,6 +29,26 @@ namespace SoliUndo.CardsStack
         
             card.SetCurrentStack(this);
             UpdateCardFaces();
+        }
+        
+        public Card RemoveCard(Card card)
+        {
+            if (card == null || !_cards.Contains(card)) return null;
+        
+            var index = _cards.IndexOf(card);
+            _cards.RemoveAt(index);
+        
+            for (var i = index; i < _cards.Count; i++)
+            {
+                var position = cardContainer.position;
+                position.y += (i + 1) * cardSpacing;
+                position.z = cardContainer.position.z + ((i + 1) * zOffset);
+                _cards[i].transform.position = position;
+            }
+        
+            UpdateCardFaces();
+        
+            return card;
         }
         
         private void UpdateCardFaces()

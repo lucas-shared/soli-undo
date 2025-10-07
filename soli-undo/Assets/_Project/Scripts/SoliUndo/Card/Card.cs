@@ -25,6 +25,7 @@ namespace SoliUndo
         private Vector3 _offset;
         
         public Vector3 OriginalPosition => _originalPosition;
+        public CardData CardData => _cardData;
         public Action<Card, CardStack, CardStack> OnMoveCard;
         
 

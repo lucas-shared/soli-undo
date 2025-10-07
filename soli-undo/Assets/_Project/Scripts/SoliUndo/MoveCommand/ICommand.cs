@@ -1,8 +1,10 @@
-using UnityEngine;
 
-public interface ICommand
+namespace SoliUndo.MoveCommand
 {
-    void Execute();
-    void Undo();
-    string Description { get; }
+    public interface ICommand
+    {
+        void Execute();
+        void Undo();
+        string Description { get; }
+    }
 }

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using SoliUndo.CardsStack;
+using SoliUndo.MoveCommand;
 using SoliUndo.ScriptableObjects;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,15 +21,10 @@ namespace SoliUndo
         private List<Card> _allCards = new();
         private CardsInitializer  _cardsInitializer;
         private CardsStacksDistributor _cardsStacksDistributor;
+        private UndoManager _undoManager;
 
-        
-        private void Start()
-        {
-            InitializeGame();
-            SetupUI();
-        }
-        
-        private void InitializeGame()
+
+        private void Awake()
         {
             if (config == null || cardPrefab == null)
             {
@@ -37,9 +33,14 @@ namespace SoliUndo
             }
 
             _cardsInitializer = new CardsInitializer();
-            _cardsStacksDistributor  = new CardsStacksDistributor();
-            
+            _cardsStacksDistributor = new CardsStacksDistributor();
+            _undoManager = new UndoManager(config.MaxUndoSteps);
+        }
+
+        private void Start()
+        {
             InitializeNewSetOfCards();
+            SetupUI();
         }
 
         private void InitializeNewSetOfCards()
@@ -77,12 +78,12 @@ namespace SoliUndo
                 return;
             }
             
-           // undo manager
+            _undoManager.ExecuteCommand( new MoveCardCommand(card, fromStack, toStack));
         }
 
         private void UndoLastMove()
         {
-
+            _undoManager.UndoLastCommand();
         }
         
         public void OnDestroy()
