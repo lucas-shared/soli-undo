@@ -620,6 +620,57 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &668067589
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 668067590}
+  - component: {fileID: 668067591}
+  m_Layer: 0
+  m_Name: Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &668067590
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668067589}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 991.5916, y: 74.0224, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &668067591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 668067589}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1889490964fdd4352867cd0eeb3acc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoliUndo.SolitaireGameManager
+  config: {fileID: 11400000, guid: 21026b15dfd16418aa376df26b727e78, type: 2}
+  cardPrefab: {fileID: 7075327110788087987, guid: e5f5c5e426019422d8da77ad1af12f66, type: 3}
+  cardStacks:
+  - {fileID: 1897299861}
+  - {fileID: 956494019}
+  - {fileID: 1408815446}
+  undoButton: {fileID: 830765942}
 --- !u!1 &830765940
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +838,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 890182767}
     m_Modifications:
+    - target: {fileID: 1591560014536510045, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
+      propertyPath: stackType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3557885309175358753, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -841,6 +896,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3557885309175358753, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
   m_PrefabInstance: {fileID: 956494017}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &956494019 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1591560014536510045, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
+  m_PrefabInstance: {fileID: 956494017}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbde6f33e0032442c8b6f6d7a2e668d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStack
 --- !u!1 &1313643912
 GameObject:
   m_ObjectHideFlags: 0
@@ -951,6 +1017,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 890182767}
     m_Modifications:
+    - target: {fileID: 1591560014536510045, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
+      propertyPath: stackType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 3557885309175358753, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 5.47
@@ -1005,6 +1075,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3557885309175358753, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
   m_PrefabInstance: {fileID: 1408815444}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1408815446 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1591560014536510045, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
+  m_PrefabInstance: {fileID: 1408815444}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbde6f33e0032442c8b6f6d7a2e668d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStack
 --- !u!1001 &1897299859
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1067,6 +1148,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3557885309175358753, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
   m_PrefabInstance: {fileID: 1897299859}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1897299861 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1591560014536510045, guid: 0baa95f0358a1497ca35dff6c704a43c, type: 3}
+  m_PrefabInstance: {fileID: 1897299859}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbde6f33e0032442c8b6f6d7a2e668d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStack
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1077,3 +1169,4 @@ SceneRoots:
   - {fileID: 890182767}
   - {fileID: 1313643916}
   - {fileID: 380884890}
+  - {fileID: 668067590}

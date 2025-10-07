@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3557885309175358753}
   - component: {fileID: 301567823301302249}
+  - component: {fileID: 1591560014536510045}
   m_Layer: 3
   m_Name: CardStack
   m_TagString: Untagged
@@ -68,7 +69,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00000023841858, y: 0}
+  m_Offset: {x: 0.00000023841858, y: -0.026489496}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -78,8 +79,24 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 3.9176106, y: 5.1809063}
+  m_Size: {x: 3.9176106, y: 8.30669}
   m_EdgeRadius: 0
+--- !u!114 &1591560014536510045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4335152806414285862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cbde6f33e0032442c8b6f6d7a2e668d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CardStack
+  stackType: 0
+  cardContainer: {fileID: 7496780823305071850}
+  cardSpacing: -0.15
+  zOffset: -0.01
 --- !u!1 &5461825613407249112
 GameObject:
   m_ObjectHideFlags: 0
@@ -202,6 +219,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 1.12}
+  m_AnchoredPosition: {x: 0, y: 1.272}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
